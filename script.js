@@ -21,3 +21,23 @@ const operate = function(num1, num2, operator) {
             return(divide(num1, num2));
     }
 }
+
+var displayValue = '';
+let num1;
+let num2;
+var operator;
+
+document.getElementById("display").innerText = displayValue;
+
+function setValue(e, displayValue) {
+    displayValue += e.innerText;
+    document.getElementById("display").innerText = displayValue;
+    //console.log(e.innerText);
+}
+
+const digits = Array.from(document.querySelectorAll('button.digit'));
+digits.forEach(digit => digit.addEventListener('click', () => {setValue(digit, displayValue)}));
+
+
+
+
